@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Comment editing
+        </title>
+    </head>
+    <body style="background: yellow">
+        <div style='margin: 2% 25% 25% 25%'>
+            <form action="/editComment/<%= comment._id %>?_method=PUT" method="POST">
+                <input type="text" value="<%= comment.username %>" name="username" disabled><br>
+                <textarea rows="10" cols="30" name="comments"><%= comment.comments %></textarea><br>
+                <input type="submit" id="button" value="Submit Now"><br>
+            </form>
+        </div>
+        <script>
+            function buttonChange(){
+                document.getElementsById('button').disabled= false;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <title>
+                Welcome to comment section
+            </title>
+        </head>
+        <body style="background: yellow">
+        <div style='margin: 1% 25% 1% 25%'>
+            <form method="post" action="/newComment">
+                <input type="text" placeholder="Username" name="username" autofocus required><br>
+                <textarea rows="10" cols="30" name="comments" placeholder="Comments..." required></textarea><br>
+                <input type="submit" value="Submit Now"><br>
+            </form>
+            <% commentList.forEach(function(comment){ %>
+            <h3 style="color:darkgray">
+                <%= comment.username %>
+            </h3>
+            <p>
+                <%= comment.comments %>
+            </p>
+            <a href="/comment/<%= comment._id %>/edit">
+                <button>Edit It</button>
+            </a>
+            <br>
+            <a href="/comment/<%= comment._id %>/delete">
+                <button>Delete Now</button>
+            </a>
+            <% }) %>
+        </div>
+        </body>
+    </html>
